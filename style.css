@@ -1,0 +1,310 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f0;
+  color: #222;
+  padding: 2rem 1rem 3rem;
+}
+
+/* ════════════════════════════════
+   BRAND HEADER
+════════════════════════════════ */
+.brand {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.brand-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 3px solid #1a3a2a;
+  background: #fff;
+  display: block;
+  margin: 0 auto 0.75rem;
+}
+
+/* Emoji fallback when logo file is missing */
+.logo-fallback {
+  display: none;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #1a3a2a;
+  background: #fff;
+  font-size: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+}
+
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a3a2a;
+  letter-spacing: 0.01em;
+}
+
+.brand-tagline {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
+/* ════════════════════════════════
+   HOLIDAY KEY
+════════════════════════════════ */
+.holiday-key {
+  max-width: 640px;
+  margin: 0 auto 1.25rem;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e8e8e4;
+  padding: 1rem 1.5rem;
+}
+
+.key-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  margin-bottom: 0.75rem;
+}
+
+.key-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem 1rem;
+}
+
+.key-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.key-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.key-item strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+.key-item span {
+  display: block;
+  font-size: 11px;
+  color: #999;
+}
+
+/* ════════════════════════════════
+   CALENDAR CARD
+════════════════════════════════ */
+.calendar-wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* ── Month header ── */
+.cal-header {
+  background: #1a3a2a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+}
+
+.cal-header h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.nav-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Day labels (Sun Mon Tue …) ── */
+.day-labels {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  padding: 0.75rem 1rem 0.25rem;
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  padding: 0.5rem 1rem 1.25rem;
+}
+
+.day {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 400;
+  color: #333;
+  transition: background 0.12s, transform 0.1s;
+  border: 1px solid transparent;
+}
+.day:hover {
+  background: #f0f0eb;
+  transform: scale(1.05);
+}
+.day.empty {
+  pointer-events: none;
+}
+
+/* Today */
+.day.today {
+  border: 2px solid #1a3a2a;
+  font-weight: 600;
+  color: #1a3a2a;
+}
+
+/* Holiday */
+.day.holiday {
+  background: #fdecea;
+  color: #c0392b;
+  font-weight: 600;
+}
+.day.holiday:hover { background: #fbd5d1; }
+
+/* Company closed (not a holiday) */
+.day.closed {
+  background: #fef9ec;
+  color: #b7860b;
+  font-weight: 600;
+}
+.day.closed:hover { background: #fdf0c8; }
+
+/* Small dot under date */
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  margin-top: 2px;
+}
+.day.holiday .dot { background: #c0392b; }
+.day.closed .dot  { background: #b7860b; }
+
+/* ════════════════════════════════
+   POPUP
+════════════════════════════════ */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+.overlay.open { display: flex; }
+
+.popup {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.75rem 1.5rem;
+  width: 90%;
+  max-width: 340px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #aaa;
+  cursor: pointer;
+  line-height: 1;
+}
+.popup-close:hover { color: #333; }
+
+.popup-date {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.popup-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a3a2a;
+  margin-bottom: 1rem;
+}
+
+.popup-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.popup-row .icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge.open-badge   { background: #e8f5ec; color: #1e7e34; }
+.badge.closed-badge { background: #fdecea; color: #c0392b; }

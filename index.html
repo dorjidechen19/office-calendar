@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhutan Peaceful Tours – Calendar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Brand header (outside the calendar card) ── -->
+  <div class="brand">
+
+    <!-- Logo placeholder: swap src="logo-placeholder.png" with your real logo file -->
+    <img class="brand-logo" src="logo-placeholder.png" alt="Bhutan Peaceful Tours logo"
+         onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';" />
+
+    <!-- Shown only if logo file is missing -->
+    <div class="logo-fallback" id="logo-fallback">🏔️</div>
+
+    <h1 class="brand-name">Bhutan Peaceful Tours & Treks</h1>
+    <p class="brand-tagline">Licensed TCB Operator · Est. 2003</p>
+  </div>
+
+  <!-- ── Holiday key (colour guide) ── -->
+  <div class="holiday-key">
+    <h2 class="key-title">Holiday & Availability Guide</h2>
+    <div class="key-items">
+      <div class="key-item">
+        <span class="key-swatch" style="background:#fdecea; border:1.5px solid #c0392b;"></span>
+        <div>
+          <strong>Public Holiday</strong>
+          <span>Bhutan national holiday</span>
+        </div>
+      </div>
+      <div class="key-item">
+        <span class="key-swatch" style="background:#fef9ec; border:1.5px solid #b7860b;"></span>
+        <div>
+          <strong>Company Closed</strong>
+          <span>Our office is closed</span>
+        </div>
+      </div>
+      <div class="key-item">
+        <span class="key-swatch" style="background:#fff; border:2px solid #1a3a2a;"></span>
+        <div>
+          <strong>Today</strong>
+          <span>Current date</span>
+        </div>
+      </div>
+      <div class="key-item">
+        <span class="key-swatch" style="background:#fff; border:1.5px solid #ddd;"></span>
+        <div>
+          <strong>Open</strong>
+          <span>Tours available</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Calendar card ── -->
+  <div class="calendar-wrapper">
+
+    <!-- Month navigation -->
+    <div class="cal-header">
+      <button class="nav-btn" id="prev">&#8249;</button>
+      <h2 id="month-title">Month Year</h2>
+      <button class="nav-btn" id="next">&#8250;</button>
+    </div>
+
+    <!-- Day labels -->
+    <div class="day-labels">
+      <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div>
+      <div>Thu</div><div>Fri</div><div>Sat</div>
+    </div>
+
+    <!-- Calendar grid (filled by script.js) -->
+    <div class="grid" id="grid"></div>
+
+  </div>
+
+  <!-- ── Popup ── -->
+  <div class="overlay" id="overlay">
+    <div class="popup">
+      <button class="popup-close" id="close-btn">&times;</button>
+      <div class="popup-date" id="popup-date"></div>
+      <div class="popup-name" id="popup-name"></div>
+      <div id="popup-body"></div>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
